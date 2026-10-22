@@ -1346,10 +1346,12 @@ class AdapterTests(unittest.TestCase):
         # Exercises orchestration, NOT genuine Wireshark dissection.
         with tempfile.TemporaryDirectory() as folder:
             binary, pcap = Path(folder) / "fake_tshark", Path(folder) / "fixture.pcap"
-            binary.write_text("#!" + sys.executable + "\nimport sys\n"
-                              "if '--version' in sys.argv:\n print('TShark (Wireshark) 4.6.9')\n"
-                              "elif 'tcp.port == 802' in sys.argv:\n pass\n"
-                              "else:\n print('1\\t192.0.2.99\\t192.0.2.20\\t1\\t6\\t100\\t50\\t\\t\\t\\t\\t\\t0\\t1')\n")
+            binary.write_text("#!/bin/sh\n"
+                              "case \" $* \" in\n"
+                              "  *\" --version \"*) echo 'TShark (Wireshark) 4.6.9' ;;\n"
+                              "  *\"tcp.port == 802\"*) : ;;\n"
+                              "  *) printf '1\\t192.0.2.99\\t192.0.2.20\\t1\\t6\\t100\\t50\\t\\t\\t\\t\\t\\t0\\t1\\n' ;;\n"
+                              "esac\n")
             binary.chmod(0o500)
             write_fixture(pcap)
             digest = hashlib.sha256(binary.read_bytes()).hexdigest()
