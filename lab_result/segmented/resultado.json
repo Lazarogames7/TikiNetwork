@@ -15,9 +15,9 @@
   "surface_with_maintenance_window": 5,
   "modbus_rtt_ms": {
     "n": 2000,
-    "median_ms": 0.054775999956291344,
-    "p99_ms": 0.13302299998940725,
-    "mean_ms": 0.0612812715015707
+    "median_ms": 0.0534564999838949,
+    "p99_ms": 0.08576600004062129,
+    "mean_ms": 0.05423627800095687
   },
   "firewall_counters_during_scenario": {
     "hist_write_drop": 10,
@@ -29,14 +29,14 @@
   "pcap_bytes": 126646,
   "analyzer": {
     "exit_code": 2,
-    "wall_s": 1.435779489999959,
-    "cpu_s": 1.2181210000000005,
-    "peak_rss_mb_children": 154.35546875
+    "wall_s": 1.0746451139999635,
+    "cpu_s": 0.8728639999999999,
+    "peak_rss_mb_children": 154.32421875
   },
   "analyzer_health": {
     "tshark_version": "4.6.9",
     "binary_sha256": "567f46b2d1a95785f96241b0af33f1ac82bdc3472e963e5c55fa588ce555ed1d",
-    "pcap_sha256": "9790d67269b2784e1cd178b0ab529a4f68a72314620fe0a871ae355f288bfeca",
+    "pcap_sha256": "5477db36038aac97b42480870950866850886eaf15043b50cf52db884c4f9ae1",
     "sandbox": {
       "mode": "require",
       "layers": {
@@ -77,7 +77,7 @@
   "false_positive_alerts": 0,
   "detector_microbench": {
     "events": 447,
-    "us_per_event": 6.908181208415264
+    "us_per_event": 6.250695749511037
   },
   "attacks": [
     {
@@ -280,22 +280,22 @@
     "label": "TELEMETRÍA EXTERNA NO VERIFICADA; carga de 3 W y almacenamiento modelados",
     "physical_control": false,
     "balance": {
-      "harvest_accepted_wh": 0.03304424354611111,
-      "load_wh": 0.18999999999999997,
-      "recovered_to_load_wh": 0.03304424354611111,
-      "grid_dc_wh": 0.15695575645388887,
-      "cooling_wh": 0.0095,
+      "harvest_accepted_wh": 0.033044329281944444,
+      "load_wh": 0.1900008333333333,
+      "recovered_to_load_wh": 0.033044329281944444,
+      "grid_dc_wh": 0.1569565040513889,
+      "cooling_wh": 0.009500041666666667,
       "curtailed_wh": 0,
       "storage_loss_wh": 0.0,
       "stored_final_wh": 0.0,
       "backup_ac_efficiency_assumed": 0.9,
-      "grid_increment_vs_no_monitor_wh": 0.18389528494876542,
-      "grid_reference_same_load_wh": 0.21111111111111108,
-      "grid_saving_vs_same_load_wh": 0.027215826162345663,
-      "operational_kg_co2e_saving_estimate": 1.0886330464938267e-05,
+      "grid_increment_vs_no_monitor_wh": 0.18389615727932096,
+      "grid_reference_same_load_wh": 0.21111203703703701,
+      "grid_saving_vs_same_load_wh": 0.027215879757716055,
+      "operational_kg_co2e_saving_estimate": 1.0886351903086422e-05,
       "carbon_factor_assumed_kg_kwh": 0.4,
       "embodied_carbon_included": false,
-      "recovered_load_fraction": 0.17391707129532163
+      "recovered_load_fraction": 0.17391675974374382
     }
   }
 }

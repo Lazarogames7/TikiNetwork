@@ -2,7 +2,7 @@
  "health": {
   "tshark_version": "4.6.9",
   "binary_sha256": "567f46b2d1a95785f96241b0af33f1ac82bdc3472e963e5c55fa588ce555ed1d",
-  "pcap_sha256": "9790d67269b2784e1cd178b0ab529a4f68a72314620fe0a871ae355f288bfeca",
+  "pcap_sha256": "5477db36038aac97b42480870950866850886eaf15043b50cf52db884c4f9ae1",
   "sandbox": {
    "mode": "require",
    "layers": {
@@ -36,7 +36,7 @@
    "code": "UNAPPROVED_REGISTER",
    "reason": "Escritura fuera del mapa de registros permitido",
    "event": {
-    "timestamp": 1792696952.793825,
+    "timestamp": 1792702055.225567,
     "source": "192.0.2.10",
     "destination": "192.0.2.20",
     "unit": 1,
@@ -45,7 +45,7 @@
     "value": 1,
     "quantity": null,
     "values": null,
-    "src_port": 42621,
+    "src_port": 49555,
     "flow_id": 2,
     "transaction_id": 1
    },
@@ -55,7 +55,7 @@
    "code": "PROCESS_LIMIT",
    "reason": "Valores fuera del intervalo permitido: 101=300",
    "event": {
-    "timestamp": 1792696959.79425,
+    "timestamp": 1792702062.228298,
     "source": "192.0.2.10",
     "destination": "192.0.2.20",
     "unit": 1,
@@ -67,7 +67,7 @@
      40,
      300
     ],
-    "src_port": 57609,
+    "src_port": 33901,
     "flow_id": 3,
     "transaction_id": 1
    },
@@ -77,7 +77,7 @@
    "code": "UNINSPECTED_CONTROL",
    "reason": "Solicitud no inspeccionable (2 ADU en una fila; incluye escritura FC6); origen NO autorizado para comandos",
    "event": {
-    "timestamp": 1792696991.801713,
+    "timestamp": 1792702094.231426,
     "source": "192.0.2.11",
     "destination": "192.0.2.20",
     "functions": [
@@ -94,7 +94,7 @@
    "code": "PROCESS_LIMIT",
    "reason": "consigna_bomba: valor fuera del intervalo de laboratorio [20, 60]",
    "event": {
-    "timestamp": 1792697002.805233,
+    "timestamp": 1792702105.220321,
     "source": "192.0.2.10",
     "destination": "192.0.2.20",
     "unit": 1,
@@ -103,7 +103,7 @@
     "value": 5,
     "quantity": null,
     "values": null,
-    "src_port": 46821,
+    "src_port": 38369,
     "flow_id": 6,
     "transaction_id": 1
    },
