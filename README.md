@@ -53,10 +53,10 @@ La corrida incluida compara una red plana con microsegmentación por lista blanc
 | Flujos alcanzables de 30 | 30 | 4 |
 | Alertas | 28 | 4 |
 | Falsos positivos medidos | 0 | 0 |
-| RTT Modbus p99 | 0.1245 ms | 0.1330 ms |
+| RTT Modbus p99 | 0.1029 ms | 0.0858 ms |
 | Fracción de carga recuperada por TEG modelado | 17.18 % | 17.39 % |
 
-Los resultados completos están en `lab_result/resumen.json`. El estado del análisis es `INCOMPLETE` porque dos segmentos con múltiples ADU se conservan como evidencia no inspeccionada en vez de descartarse silenciosamente. Son datos sintéticos de un único kernel, no resultados de campo.
+Los resultados completos están en `lab_result/resumen.json` y explicados en `lab_result/REPORTE_LAB.md`. El estado del análisis es `INCOMPLETE` porque los segmentos con múltiples ADU se conservan como evidencia no inspeccionada en vez de descartarse silenciosamente. Son datos sintéticos de un único kernel, no resultados de campo.
 
 ## Laboratorio completo
 

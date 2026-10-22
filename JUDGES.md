@@ -11,8 +11,9 @@ python3 docs/hackathon/calcular.py
 1. Confirme `Ran 42 tests` y `OK`. En macOS habrá 3 omisiones Linux explícitas.
 2. Abra `revision_juez/panel.html`; todo funciona sin internet, paquetes de Python ni privilegios.
 3. Compare `lab_result/flat/resultado.json` con `lab_result/segmented/resultado.json`.
-4. Revise `docs/security/REMEDIACION_REVISION2.md` para relacionar hallazgos, cambios y límites.
-5. Revise `docs/hackathon/resultados.json` para PUE, WUE, balance hídrico y supuestos.
+4. Lea `lab_result/REPORTE_LAB.md` para la interpretación ataque por ataque.
+5. Revise `docs/security/REMEDIACION_REVISION2.md` para relacionar hallazgos, cambios y límites.
+6. Revise `docs/hackathon/resultados.json` para PUE, WUE, balance hídrico y supuestos.
 
 ## Qué demuestra cada ruta
 
