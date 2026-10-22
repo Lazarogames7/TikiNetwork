@@ -1,0 +1,9 @@
+{
+  "label": "DATOS SIMULADOS",
+  "packets": 16,
+  "requests": 4,
+  "expected_alert_codes": [
+    "UNAUTHORIZED_COMMAND",
+    "PROCESS_LIMIT"
+  ]
+}

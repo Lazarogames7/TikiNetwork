@@ -1,0 +1,101 @@
+{
+  "notice": "DATOS SIMULADOS. Contrafactual y potencia supuestos; no ahorro real medido.",
+  "csv_sha256": "a498db9c2251a8f9dc761ab08f30f59f3e8269ac5a71546219a2d1b5552e7088",
+  "full": {
+    "rows": 504,
+    "energy_it_kwh": 82656.4237,
+    "energy_total_kwh": 105256.0051,
+    "water_l": 31593.1444,
+    "pue": 1.273415911170132,
+    "wue_captacion_l_kwh": 0.3822224938580303
+  },
+  "by_split": {
+    "referencia": {
+      "rows": 216,
+      "energy_it_kwh": 35509.846,
+      "energy_total_kwh": 45010.9549,
+      "water_l": 13013.0147,
+      "pue": 1.2675626613531357,
+      "wue_captacion_l_kwh": 0.36646215531320525
+    },
+    "evaluacion": {
+      "rows": 288,
+      "energy_it_kwh": 47146.5777,
+      "energy_total_kwh": 60245.0502,
+      "water_l": 18580.1297,
+      "pue": 1.2778244602046693,
+      "wue_captacion_l_kwh": 0.39409286116646386
+    }
+  },
+  "by_site": {
+    "SIM-A": {
+      "rows": 168,
+      "energy_it_kwh": 27595.5678,
+      "energy_total_kwh": 38227.8349,
+      "water_l": 882.9033,
+      "pue": 1.3852889412190317,
+      "wue_captacion_l_kwh": 0.031994387881375645
+    },
+    "SIM-B": {
+      "rows": 168,
+      "energy_it_kwh": 27581.3955,
+      "energy_total_kwh": 34120.2198,
+      "water_l": 24849.4334,
+      "pue": 1.237073729645043,
+      "wue_captacion_l_kwh": 0.9009490980976652
+    },
+    "SIM-C": {
+      "rows": 168,
+      "energy_it_kwh": 27479.4604,
+      "energy_total_kwh": 32907.9504,
+      "water_l": 5860.8077,
+      "pue": 1.1975471832772961,
+      "wue_captacion_l_kwh": 0.2132795773529818
+    }
+  },
+  "water_scenario": {
+    "site": "SIM-B",
+    "reference_wue": 0.8536880141482798,
+    "leak_intervals": 8,
+    "leak_water_l": 2184.3658,
+    "excess_all_8h_l": 1251.9823490122908,
+    "first_hour_unavoided_l": 158.58251959070574,
+    "avoidable_after_first_hour_l": 1093.3998294215849,
+    "assumptions": {
+      "hours": 168,
+      "monitor_w": 3,
+      "facility_multiplier": 1.3,
+      "marginal_onsite_water_l_per_added_facility_kwh": 1,
+      "carbon_kg_per_kwh": 0.3,
+      "teg_credit_kwh": 0,
+      "avoided_process_energy_kwh": 0
+    },
+    "monitor_it_kwh": 0.504,
+    "added_facility_kwh": 0.6552,
+    "added_water_l": 0.6552,
+    "added_operational_carbon_kg": 0.19655999999999998,
+    "sensitivity": [
+      {
+        "recovery_fraction": 0,
+        "gross_avoided_l": 0.0,
+        "net_avoided_l": -0.6552
+      },
+      {
+        "recovery_fraction": 0.25,
+        "gross_avoided_l": 273.3499573553962,
+        "net_avoided_l": 272.69475735539623
+      },
+      {
+        "recovery_fraction": 0.5,
+        "gross_avoided_l": 546.6999147107924,
+        "net_avoided_l": 546.0447147107924
+      },
+      {
+        "recovery_fraction": 1,
+        "gross_avoided_l": 1093.3998294215849,
+        "net_avoided_l": 1092.744629421585
+      }
+    ],
+    "break_even_recovery_fraction": 0.0005992318476458925
+  }
+}
