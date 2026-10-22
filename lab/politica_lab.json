@@ -1,0 +1,5 @@
+{"allowed_sources": ["192.0.2.10"],
+ "allowed_readers": ["192.0.2.10", "192.0.2.11"],
+ "targets": [["192.0.2.20", 1]],
+ "registers": {"100": [20, 60, "consigna_bomba"], "101": [70, 150, "setpoint_agua_fria_x10"]},
+ "coils": {}}

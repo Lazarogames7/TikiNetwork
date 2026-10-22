@@ -17,7 +17,12 @@
             "unit": 1,
             "function": 6,
             "address": 100,
-            "value": 50
+            "value": 50,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         },
@@ -31,13 +36,18 @@
             "unit": 1,
             "function": 6,
             "address": 100,
-            "value": 90
+            "value": 90,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         },
         {
           "code": "UNSUPPORTED_CONTROL",
-          "reason": "Función no cubierta: requiere revisión; no se declara segura",
+          "reason": "Campos incompletos en función de escritura: requiere revisión; no se declara segura",
           "event": {
             "timestamp": 450,
             "source": "192.0.2.10",
@@ -45,7 +55,12 @@
             "unit": 1,
             "function": 16,
             "address": null,
-            "value": null
+            "value": null,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         }
@@ -9687,7 +9702,12 @@
             "unit": 1,
             "function": 6,
             "address": 100,
-            "value": 50
+            "value": 50,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         },
@@ -9701,13 +9721,18 @@
             "unit": 1,
             "function": 6,
             "address": 100,
-            "value": 90
+            "value": 90,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         },
         {
           "code": "UNSUPPORTED_CONTROL",
-          "reason": "Función no cubierta: requiere revisión; no se declara segura",
+          "reason": "Campos incompletos en función de escritura: requiere revisión; no se declara segura",
           "event": {
             "timestamp": 450,
             "source": "192.0.2.10",
@@ -9715,7 +9740,12 @@
             "unit": 1,
             "function": 16,
             "address": null,
-            "value": null
+            "value": null,
+            "quantity": null,
+            "values": null,
+            "src_port": null,
+            "flow_id": null,
+            "transaction_id": null
           },
           "action": "REVISIÓN HUMANA; sin bloqueo automático"
         }

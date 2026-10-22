@@ -1,0 +1,114 @@
+{
+ "health": {
+  "tshark_version": "4.6.9",
+  "binary_sha256": "567f46b2d1a95785f96241b0af33f1ac82bdc3472e963e5c55fa588ce555ed1d",
+  "pcap_sha256": "9790d67269b2784e1cd178b0ab529a4f68a72314620fe0a871ae355f288bfeca",
+  "sandbox": {
+   "mode": "require",
+   "layers": {
+    "rlimit_core": true,
+    "rlimit_cpu": true,
+    "rlimit_fsize": true,
+    "rlimit_nofile": true,
+    "rlimit_as": true,
+    "rlimit_as_enforced_by_os": true,
+    "no_new_privs": true,
+    "user_net_namespaces": true,
+    "landlock_filesystem_abi": 7,
+    "filesystem_isolation": true,
+    "seccomp_network_deny": true
+   },
+   "complete_for_platform": true,
+   "filesystem_isolation": true,
+   "namespaces": true
+  },
+  "packets_in_file": 1393,
+  "parsed_requests": 447,
+  "rejected_rows": 1,
+  "encrypted_packets_uninspected": 0,
+  "status": "INCOMPLETE",
+  "scope": "IPv4 Modbus/TCP destino 502, offline. Se interpretan FC01-06, FC15 y FC16; otras funciones -> UNSUPPORTED_CONTROL; filas no separables -> UNINSPECTED_*. Sin IPv6, BACnet, puertos alternativos ni tráfico cifrado (TLS puerto 802)",
+  "production_ready": false,
+  "policy_sha256": "cede6f31f7c1a25beef0619f89e4f6347aacd3638a944d848f1be24e7f3f5f42"
+ },
+ "alerts": [
+  {
+   "code": "UNAPPROVED_REGISTER",
+   "reason": "Escritura fuera del mapa de registros permitido",
+   "event": {
+    "timestamp": 1792696952.793825,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 200,
+    "value": 1,
+    "quantity": null,
+    "values": null,
+    "src_port": 42621,
+    "flow_id": 2,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "PROCESS_LIMIT",
+   "reason": "Valores fuera del intervalo permitido: 101=300",
+   "event": {
+    "timestamp": 1792696959.79425,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 16,
+    "address": 100,
+    "value": null,
+    "quantity": 2,
+    "values": [
+     40,
+     300
+    ],
+    "src_port": 57609,
+    "flow_id": 3,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNINSPECTED_CONTROL",
+   "reason": "Solicitud no inspeccionable (2 ADU en una fila; incluye escritura FC6); origen NO autorizado para comandos",
+   "event": {
+    "timestamp": 1792696991.801713,
+    "source": "192.0.2.11",
+    "destination": "192.0.2.20",
+    "functions": [
+     4,
+     6
+    ],
+    "adus_in_row": 2,
+    "flow_id": 5,
+    "source_authorized_for_writes": false
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "PROCESS_LIMIT",
+   "reason": "consigna_bomba: valor fuera del intervalo de laboratorio [20, 60]",
+   "event": {
+    "timestamp": 1792697002.805233,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 100,
+    "value": 5,
+    "quantity": null,
+    "values": null,
+    "src_port": 46821,
+    "flow_id": 6,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  }
+ ],
+ "physical_control": false
+}

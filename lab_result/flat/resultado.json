@@ -1,0 +1,328 @@
+{
+  "label": "DATOS SIMULADOS",
+  "mode": "flat",
+  "duration_s": 200,
+  "surface": {
+    "possible": 30,
+    "reachable": 30,
+    "allowed_flows": [
+      "plc→scada:8080",
+      "plc→hist:443",
+      "plc→eng:22",
+      "plc→mon:443",
+      "plc→laptop:445",
+      "scada→plc:502",
+      "scada→hist:443",
+      "scada→eng:22",
+      "scada→mon:443",
+      "scada→laptop:445",
+      "hist→plc:502",
+      "hist→scada:8080",
+      "hist→eng:22",
+      "hist→mon:443",
+      "hist→laptop:445",
+      "eng→plc:502",
+      "eng→scada:8080",
+      "eng→hist:443",
+      "eng→mon:443",
+      "eng→laptop:445",
+      "mon→plc:502",
+      "mon→scada:8080",
+      "mon→hist:443",
+      "mon→eng:22",
+      "mon→laptop:445",
+      "laptop→plc:502",
+      "laptop→scada:8080",
+      "laptop→hist:443",
+      "laptop→eng:22",
+      "laptop→mon:443"
+    ]
+  },
+  "surface_with_maintenance_window": 30,
+  "modbus_rtt_ms": {
+    "n": 2000,
+    "median_ms": 0.05725450000682031,
+    "p99_ms": 0.12449999985619797,
+    "mean_ms": 0.06286671649991149
+  },
+  "firewall_counters_during_scenario": {
+    "forwarded": 5518
+  },
+  "pcap_bytes": 511873,
+  "analyzer": {
+    "exit_code": 2,
+    "wall_s": 1.266761650000035,
+    "cpu_s": 1.0787150000000003,
+    "peak_rss_mb_children": 154.0390625
+  },
+  "analyzer_health": {
+    "tshark_version": "4.6.9",
+    "binary_sha256": "567f46b2d1a95785f96241b0af33f1ac82bdc3472e963e5c55fa588ce555ed1d",
+    "pcap_sha256": "bed180945ae31e80ccad8f179db33976977c8187be9d3c72420ce4fe466c4d2b",
+    "sandbox": {
+      "mode": "require",
+      "layers": {
+        "rlimit_core": true,
+        "rlimit_cpu": true,
+        "rlimit_fsize": true,
+        "rlimit_nofile": true,
+        "rlimit_as": true,
+        "rlimit_as_enforced_by_os": true,
+        "no_new_privs": true,
+        "user_net_namespaces": true,
+        "landlock_filesystem_abi": 7,
+        "filesystem_isolation": true,
+        "seccomp_network_deny": true
+      },
+      "complete_for_platform": true,
+      "filesystem_isolation": true,
+      "namespaces": true
+    },
+    "packets_in_file": 5518,
+    "parsed_requests": 2486,
+    "rejected_rows": 2,
+    "encrypted_packets_uninspected": 0,
+    "status": "INCOMPLETE",
+    "scope": "IPv4 Modbus/TCP destino 502, offline. Se interpretan FC01-06, FC15 y FC16; otras funciones -> UNSUPPORTED_CONTROL; filas no separables -> UNINSPECTED_*. Sin IPv6, BACnet, puertos alternativos ni tráfico cifrado (TLS puerto 802)",
+    "production_ready": false,
+    "policy_sha256": "cede6f31f7c1a25beef0619f89e4f6347aacd3638a944d848f1be24e7f3f5f42"
+  },
+  "analyzer_error": null,
+  "alerts_total": 28,
+  "alert_codes": [
+    "PROCESS_LIMIT",
+    "READ_FLOOD",
+    "UNAPPROVED_REGISTER",
+    "UNAUTHORIZED_COMMAND",
+    "UNAUTHORIZED_READ",
+    "UNEXPECTED_ASSET",
+    "UNINSPECTED_CONTROL"
+  ],
+  "requests_in_capture": 2490,
+  "normal_requests": 434,
+  "false_positive_alerts": 0,
+  "detector_microbench": {
+    "events": 2486,
+    "us_per_event": 5.611348350749947
+  },
+  "attacks": [
+    {
+      "id": "A1",
+      "src": "192.0.2.99",
+      "desc": "Escritura FC06 desde laptop de IT (origen no autorizado)",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "UNAUTHORIZED_COMMAND"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 50.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A4",
+      "src": "192.0.2.99",
+      "desc": "Reconocimiento: barrido de registros 0–250 y unit IDs 1–10",
+      "sent": 36,
+      "errors": [],
+      "answered": 36,
+      "requests_reaching_plc": 36,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "UNAUTHORIZED_READ",
+        "UNEXPECTED_ASSET"
+      ],
+      "alerts": 19,
+      "pump_cmd_after": 39.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A3",
+      "src": "192.0.2.99",
+      "desc": "Inundación: 2000 lecturas FC03 lo más rápido posible",
+      "sent": 2000,
+      "errors": [],
+      "answered": 2000,
+      "requests_reaching_plc": 2000,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "READ_FLOOD"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 39.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A7",
+      "src": "192.0.2.10",
+      "desc": "SCADA comprometido: FC06 a registro no aprobado 200",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "UNAPPROVED_REGISTER"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 42.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A6",
+      "src": "192.0.2.10",
+      "desc": "SCADA comprometido: FC16 escribe 100–101 = [40, 300]",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "PROCESS_LIMIT"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 40.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A8",
+      "src": "192.0.2.11",
+      "desc": "Historian (solo lectura) emite escritura FC06 100=40",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "UNAUTHORIZED_COMMAND"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 40.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A9",
+      "src": "192.0.2.12",
+      "desc": "Estación de ingeniería fuera de ventana de mantenimiento: FC06 100=45",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "UNAUTHORIZED_COMMAND"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 45.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A10",
+      "src": "192.0.2.99",
+      "desc": "Evasión: FC03 + FC06 100=55 en el mismo segmento TCP",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 2,
+      "multi_adu_segments": 2,
+      "alert_codes": [
+        "UNINSPECTED_CONTROL"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 55.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A11",
+      "src": "192.0.2.11",
+      "desc": "Evasión del filtro del historian: FC04 + FC06 100=60 en un segmento",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 2,
+      "multi_adu_segments": 2,
+      "alert_codes": [
+        "UNINSPECTED_CONTROL"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 60.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "A2",
+      "src": "192.0.2.10",
+      "desc": "SCADA comprometido: consigna de bomba a 5 % (apagar bomba)",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [
+        "PROCESS_LIMIT"
+      ],
+      "alerts": 1,
+      "pump_cmd_after": 5.0,
+      "outcome": "DETECTADO (alerta, sin bloqueo)"
+    },
+    {
+      "id": "R1",
+      "src": "192.0.2.10",
+      "desc": "Operador restablece consigna a 40 % tras revisar la alerta (no es ataque)",
+      "sent": 1,
+      "errors": [],
+      "answered": 1,
+      "requests_reaching_plc": 1,
+      "multi_adu_segments": 0,
+      "alert_codes": [],
+      "alerts": 0,
+      "pump_cmd_after": 40.0,
+      "outcome": "operación legítima"
+    },
+    {
+      "id": "A5",
+      "src": "(sensor)",
+      "desc": "Deriva de sensor: Ti reportada sube 0.08 K/s (no es tráfico)",
+      "sent": 0,
+      "errors": [],
+      "answered": 0,
+      "requests_reaching_plc": 0,
+      "multi_adu_segments": 0,
+      "alert_codes": [],
+      "alerts": 0,
+      "pump_cmd_after": 40.0,
+      "outcome": "NO DETECTADO (no es tráfico; el detector de red no lo puede ver)"
+    }
+  ],
+  "plant": {
+    "ti_max_c": 27.849,
+    "ti_min_c": 22.698,
+    "seconds_ti_above_27c": 22,
+    "max_sensor_lie_k": 3.200000000000003,
+    "samples": 208
+  },
+  "energy_replay": {
+    "label": "TELEMETRÍA EXTERNA NO VERIFICADA; carga de 3 W y almacenamiento modelados",
+    "physical_control": false,
+    "balance": {
+      "harvest_accepted_wh": 0.029640040703888888,
+      "load_wh": 0.1725,
+      "recovered_to_load_wh": 0.029640040703888888,
+      "grid_dc_wh": 0.1428599592961111,
+      "cooling_wh": 0.008624999999999999,
+      "curtailed_wh": 0,
+      "storage_loss_wh": 0.0,
+      "stored_final_wh": 0.0,
+      "backup_ac_efficiency_assumed": 0.9,
+      "grid_increment_vs_no_monitor_wh": 0.1673582881067901,
+      "grid_reference_same_load_wh": 0.19166666666666665,
+      "grid_saving_vs_same_load_wh": 0.024308378559876553,
+      "operational_kg_co2e_saving_estimate": 9.723351423950622e-06,
+      "carbon_factor_assumed_kg_kwh": 0.4,
+      "embodied_carbon_included": false,
+      "recovered_load_fraction": 0.171826322921095
+    }
+  }
+}

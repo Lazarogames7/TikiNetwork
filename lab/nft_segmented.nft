@@ -1,0 +1,39 @@
+#!/usr/sbin/nft -f
+# Microsegmentación Zero Trust del laboratorio (Solución 2). DATOS SIMULADOS.
+# Política: todo prohibido; solo los conductos de la lista blanca.
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Ciberfox contributors
+flush ruleset
+
+table inet ciberfox {
+    set maintenance {                    # ventana de mantenimiento: vacío por defecto
+        type ipv4_addr
+    }
+
+    counter hist_write_drop {}           # escrituras del historian (solo lectura)
+    counter it_to_ot_drop {}             # IT corporativa hacia cualquier cosa no permitida
+    counter default_drop {}              # resto de flujos no listados
+    counter scada_plc_new {}
+    counter hist_plc_new {}
+
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+
+        # Conducto B->A del historian: solo funciones de lectura FC03/FC04.
+        # Inspecciona el byte de función (offset 7 del payload TCP = después del MBAP).
+        # LÍMITE: solo ve la PRIMERA ADU del segmento (ver ataque A11).
+        ip saddr 192.0.2.11 ip daddr 192.0.2.20 tcp dport 502 @ih,56,8 != { 3, 4 } counter name hist_write_drop drop
+
+        ct state established,related accept
+        ct state invalid drop
+
+        ip saddr 192.0.2.10 ip daddr 192.0.2.20 tcp dport 502 ct state new counter name scada_plc_new accept
+        ip saddr 192.0.2.11 ip daddr 192.0.2.20 tcp dport 502 ct state new counter name hist_plc_new accept
+        ip saddr @maintenance ip daddr 192.0.2.20 tcp dport 502 ct state new accept
+        ip saddr 192.0.2.34 ip daddr 192.0.2.11 tcp dport 443 ct state new accept
+        ip saddr 192.0.2.99 ip daddr 192.0.2.34 tcp dport 443 ct state new accept
+
+        ip saddr 192.0.2.99 counter name it_to_ot_drop drop
+        counter name default_drop drop
+    }
+}

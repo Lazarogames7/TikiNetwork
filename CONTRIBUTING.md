@@ -4,6 +4,6 @@
 2. Marque claramente todos los datos generados como `DATOS SIMULADOS`.
 3. Mantenga el análisis pasivo: ninguna contribución debe enviar órdenes a equipos OT.
 4. Añada pruebas para cambios en detección, contabilidad energética o validación de entradas.
-5. Ejecute `python3 -m unittest discover -s tests -v` y `python3 docs/hackathon/calcular.py` antes de enviar cambios.
+5. Ejecute `python3 ciberfox.py test` y `python3 docs/hackathon/calcular.py` antes de enviar cambios.
 6. No presente resultados sintéticos como eficacia de campo, ahorro garantizado o certificación de seguridad.
 

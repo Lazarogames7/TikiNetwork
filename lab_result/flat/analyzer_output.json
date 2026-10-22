@@ -1,0 +1,628 @@
+{
+ "health": {
+  "tshark_version": "4.6.9",
+  "binary_sha256": "567f46b2d1a95785f96241b0af33f1ac82bdc3472e963e5c55fa588ce555ed1d",
+  "pcap_sha256": "bed180945ae31e80ccad8f179db33976977c8187be9d3c72420ce4fe466c4d2b",
+  "sandbox": {
+   "mode": "require",
+   "layers": {
+    "rlimit_core": true,
+    "rlimit_cpu": true,
+    "rlimit_fsize": true,
+    "rlimit_nofile": true,
+    "rlimit_as": true,
+    "rlimit_as_enforced_by_os": true,
+    "no_new_privs": true,
+    "user_net_namespaces": true,
+    "landlock_filesystem_abi": 7,
+    "filesystem_isolation": true,
+    "seccomp_network_deny": true
+   },
+   "complete_for_platform": true,
+   "filesystem_isolation": true,
+   "namespaces": true
+  },
+  "packets_in_file": 5518,
+  "parsed_requests": 2486,
+  "rejected_rows": 2,
+  "encrypted_packets_uninspected": 0,
+  "status": "INCOMPLETE",
+  "scope": "IPv4 Modbus/TCP destino 502, offline. Se interpretan FC01-06, FC15 y FC16; otras funciones -> UNSUPPORTED_CONTROL; filas no separables -> UNINSPECTED_*. Sin IPv6, BACnet, puertos alternativos ni tráfico cifrado (TLS puerto 802)",
+  "production_ready": false,
+  "policy_sha256": "cede6f31f7c1a25beef0619f89e4f6347aacd3638a944d848f1be24e7f3f5f42"
+ },
+ "alerts": [
+  {
+   "code": "UNAUTHORIZED_COMMAND",
+   "reason": "Origen no autorizado para comandos de control",
+   "event": {
+    "timestamp": 1792696682.346625,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 100,
+    "value": 50,
+    "quantity": null,
+    "values": null,
+    "src_port": 37703,
+    "flow_id": 2,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.34562,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 3,
+    "address": 0,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 2027,
+   "first_timestamp": 1792696692.34562,
+   "last_timestamp": 1792696707.476232,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347742,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 2,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 28
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347742,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 2,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 28
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347742,
+   "last_timestamp": 1792696692.347742,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347787,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 3,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 29
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347787,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 3,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 29
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347787,
+   "last_timestamp": 1792696692.347787,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347831,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 4,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 30
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347831,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 4,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 30
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347831,
+   "last_timestamp": 1792696692.347831,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347876,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 5,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 31
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347876,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 5,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 31
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347876,
+   "last_timestamp": 1792696692.347876,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347919,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 6,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 32
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347919,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 6,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 32
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347919,
+   "last_timestamp": 1792696692.347919,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.347963,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 7,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 33
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.347963,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 7,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 33
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.347963,
+   "last_timestamp": 1792696692.347963,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.348006,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 8,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 34
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.348006,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 8,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 34
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.348006,
+   "last_timestamp": 1792696692.348006,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.348056,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 9,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 35
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.348056,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 9,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 35
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.348056,
+   "last_timestamp": 1792696692.348056,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "UNEXPECTED_ASSET",
+   "reason": "Destino o unidad fuera de la política de laboratorio",
+   "event": {
+    "timestamp": 1792696692.3481,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 10,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 36
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_READ",
+   "reason": "Lectura desde origen no autorizado (posible reconocimiento o inundación); repeticiones agregadas en 60 s",
+   "event": {
+    "timestamp": 1792696692.3481,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 10,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 52559,
+    "flow_id": 3,
+    "transaction_id": 36
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático",
+   "occurrences": 1,
+   "first_timestamp": 1792696692.3481,
+   "last_timestamp": 1792696692.3481,
+   "functions": [
+    3
+   ]
+  },
+  {
+   "code": "READ_FLOOD",
+   "reason": "100 lecturas no autorizadas en 15.0 s: posible inundación",
+   "event": {
+    "timestamp": 1792696707.35174,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 3,
+    "address": 100,
+    "value": null,
+    "quantity": null,
+    "values": null,
+    "src_port": 59127,
+    "flow_id": 4,
+    "transaction_id": 73
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAPPROVED_REGISTER",
+   "reason": "Escritura fuera del mapa de registros permitido",
+   "event": {
+    "timestamp": 1792696722.351592,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 200,
+    "value": 1,
+    "quantity": null,
+    "values": null,
+    "src_port": 50839,
+    "flow_id": 5,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "PROCESS_LIMIT",
+   "reason": "Valores fuera del intervalo permitido: 101=300",
+   "event": {
+    "timestamp": 1792696729.346979,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 16,
+    "address": 100,
+    "value": null,
+    "quantity": 2,
+    "values": [
+     40,
+     300
+    ],
+    "src_port": 56057,
+    "flow_id": 6,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_COMMAND",
+   "reason": "Origen no autorizado para comandos de control",
+   "event": {
+    "timestamp": 1792696737.346718,
+    "source": "192.0.2.11",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 100,
+    "value": 40,
+    "quantity": null,
+    "values": null,
+    "src_port": 52517,
+    "flow_id": 7,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNAUTHORIZED_COMMAND",
+   "reason": "Origen no autorizado para comandos de control",
+   "event": {
+    "timestamp": 1792696745.35586,
+    "source": "192.0.2.12",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 100,
+    "value": 45,
+    "quantity": null,
+    "values": null,
+    "src_port": 46429,
+    "flow_id": 8,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNINSPECTED_CONTROL",
+   "reason": "Solicitud no inspeccionable (2 ADU en una fila; incluye escritura FC6); origen NO autorizado para comandos",
+   "event": {
+    "timestamp": 1792696753.357724,
+    "source": "192.0.2.99",
+    "destination": "192.0.2.20",
+    "functions": [
+     3,
+     6
+    ],
+    "adus_in_row": 2,
+    "flow_id": 9,
+    "source_authorized_for_writes": false
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "UNINSPECTED_CONTROL",
+   "reason": "Solicitud no inspeccionable (2 ADU en una fila; incluye escritura FC6); origen NO autorizado para comandos",
+   "event": {
+    "timestamp": 1792696761.358478,
+    "source": "192.0.2.11",
+    "destination": "192.0.2.20",
+    "functions": [
+     4,
+     6
+    ],
+    "adus_in_row": 2,
+    "flow_id": 10,
+    "source_authorized_for_writes": false
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  },
+  {
+   "code": "PROCESS_LIMIT",
+   "reason": "consigna_bomba: valor fuera del intervalo de laboratorio [20, 60]",
+   "event": {
+    "timestamp": 1792696772.348521,
+    "source": "192.0.2.10",
+    "destination": "192.0.2.20",
+    "unit": 1,
+    "function": 6,
+    "address": 100,
+    "value": 5,
+    "quantity": null,
+    "values": null,
+    "src_port": 34805,
+    "flow_id": 11,
+    "transaction_id": 1
+   },
+   "action": "REVISIÓN HUMANA; sin bloqueo automático"
+  }
+ ],
+ "physical_control": false
+}

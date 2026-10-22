@@ -1,0 +1,17 @@
+#!/usr/sbin/nft -f
+# Red plana (línea base): el gateway reenvía todo. DATOS SIMULADOS.
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Ciberfox contributors
+flush ruleset
+
+table inet ciberfox {
+    set maintenance {
+        type ipv4_addr
+    }
+    counter forwarded {}
+
+    chain forward {
+        type filter hook forward priority 0; policy accept;
+        counter name forwarded
+    }
+}

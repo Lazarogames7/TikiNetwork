@@ -18,8 +18,21 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Run unit tests
-        run: python -m unittest discover -s tests -v
+      - name: Compile source
+        run: python -m py_compile ciberfox.py lab/*.py
+      - name: Run 42 tests
+        run: python ciberfox.py test
+      - name: Generate offline demo
+        run: python ciberfox.py demo --out ci_demo
+      - name: Validate committed evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in (Path("lab_result/resumen.json"), Path("demo_result/simulation.json")):
+              data = json.loads(path.read_text())
+              assert "SIMULAD" in json.dumps(data, ensure_ascii=False).upper()
+          PY
       - name: Reproduce hackathon metrics
         run: python docs/hackathon/calcular.py
       - name: Ensure generated results are committed

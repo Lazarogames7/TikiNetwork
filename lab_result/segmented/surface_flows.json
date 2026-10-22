@@ -1,0 +1,212 @@
+[
+ {
+  "src": "plc",
+  "dst": "scada",
+  "host": "192.0.2.10",
+  "port": 8080,
+  "reachable": false
+ },
+ {
+  "src": "plc",
+  "dst": "hist",
+  "host": "192.0.2.11",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "plc",
+  "dst": "eng",
+  "host": "192.0.2.12",
+  "port": 22,
+  "reachable": false
+ },
+ {
+  "src": "plc",
+  "dst": "mon",
+  "host": "192.0.2.34",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "plc",
+  "dst": "laptop",
+  "host": "192.0.2.99",
+  "port": 445,
+  "reachable": false
+ },
+ {
+  "src": "scada",
+  "dst": "plc",
+  "host": "192.0.2.20",
+  "port": 502,
+  "reachable": true
+ },
+ {
+  "src": "scada",
+  "dst": "hist",
+  "host": "192.0.2.11",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "scada",
+  "dst": "eng",
+  "host": "192.0.2.12",
+  "port": 22,
+  "reachable": false
+ },
+ {
+  "src": "scada",
+  "dst": "mon",
+  "host": "192.0.2.34",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "scada",
+  "dst": "laptop",
+  "host": "192.0.2.99",
+  "port": 445,
+  "reachable": false
+ },
+ {
+  "src": "hist",
+  "dst": "plc",
+  "host": "192.0.2.20",
+  "port": 502,
+  "reachable": true
+ },
+ {
+  "src": "hist",
+  "dst": "scada",
+  "host": "192.0.2.10",
+  "port": 8080,
+  "reachable": false
+ },
+ {
+  "src": "hist",
+  "dst": "eng",
+  "host": "192.0.2.12",
+  "port": 22,
+  "reachable": false
+ },
+ {
+  "src": "hist",
+  "dst": "mon",
+  "host": "192.0.2.34",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "hist",
+  "dst": "laptop",
+  "host": "192.0.2.99",
+  "port": 445,
+  "reachable": false
+ },
+ {
+  "src": "eng",
+  "dst": "plc",
+  "host": "192.0.2.20",
+  "port": 502,
+  "reachable": false
+ },
+ {
+  "src": "eng",
+  "dst": "scada",
+  "host": "192.0.2.10",
+  "port": 8080,
+  "reachable": false
+ },
+ {
+  "src": "eng",
+  "dst": "hist",
+  "host": "192.0.2.11",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "eng",
+  "dst": "mon",
+  "host": "192.0.2.34",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "eng",
+  "dst": "laptop",
+  "host": "192.0.2.99",
+  "port": 445,
+  "reachable": false
+ },
+ {
+  "src": "mon",
+  "dst": "plc",
+  "host": "192.0.2.20",
+  "port": 502,
+  "reachable": false
+ },
+ {
+  "src": "mon",
+  "dst": "scada",
+  "host": "192.0.2.10",
+  "port": 8080,
+  "reachable": false
+ },
+ {
+  "src": "mon",
+  "dst": "hist",
+  "host": "192.0.2.11",
+  "port": 443,
+  "reachable": true
+ },
+ {
+  "src": "mon",
+  "dst": "eng",
+  "host": "192.0.2.12",
+  "port": 22,
+  "reachable": false
+ },
+ {
+  "src": "mon",
+  "dst": "laptop",
+  "host": "192.0.2.99",
+  "port": 445,
+  "reachable": false
+ },
+ {
+  "src": "laptop",
+  "dst": "plc",
+  "host": "192.0.2.20",
+  "port": 502,
+  "reachable": false
+ },
+ {
+  "src": "laptop",
+  "dst": "scada",
+  "host": "192.0.2.10",
+  "port": 8080,
+  "reachable": false
+ },
+ {
+  "src": "laptop",
+  "dst": "hist",
+  "host": "192.0.2.11",
+  "port": 443,
+  "reachable": false
+ },
+ {
+  "src": "laptop",
+  "dst": "eng",
+  "host": "192.0.2.12",
+  "port": 22,
+  "reachable": false
+ },
+ {
+  "src": "laptop",
+  "dst": "mon",
+  "host": "192.0.2.34",
+  "port": 443,
+  "reachable": true
+ }
+]
